@@ -176,22 +176,22 @@ Now, let's try running both with ASLR turned off.  I've written a simple script
 named 'run_aslr_off.sh' that does exactly that:
 
 ```
-$ ./run_aslr_off.sh ./heap.bin
+$ bash run_aslr_off.sh ./heap.bin
 setarch x86_64 -R ./heap.bin
 p = 0x5555555592a0
-$ ./run_aslr_off.sh ./heap.bin
+$ bash run_aslr_off.sh ./heap.bin
 setarch x86_64 -R ./heap.bin
 p = 0x5555555592a0
-$ ./run_aslr_off.sh ./heap.bin
+$ bash run_aslr_off.sh ./heap.bin
 setarch x86_64 -R ./heap.bin
 p = 0x5555555592a0
-$ ./run_aslr_off.sh ./stack.bin
+$ bash run_aslr_off.sh ./stack.bin
 setarch x86_64 -R ./stack.bin
 p = 0x7fffffffe3e0
-$ ./run_aslr_off.sh ./stack.bin
+$ bash run_aslr_off.sh ./stack.bin
 setarch x86_64 -R ./stack.bin
 p = 0x7fffffffe3e0
-$ ./run_aslr_off.sh ./stack.bin
+$ bash run_aslr_off.sh ./stack.bin
 setarch x86_64 -R ./stack.bin
 p = 0x7fffffffe3e0
 ```
@@ -273,15 +273,15 @@ again turn off ASLR to make the buggy program run deterministically at least
 while debugging:
 
 ```
-$ ./run_aslr_off.sh ./stack_overflow.bin
+$ bash run_aslr_off.sh ./stack_overflow.bin
 setarch x86_64 -R ./a.out
 [Sent data]
 48 65 6c 6c 6f 2e 2e  0 e0 e3 ff ff ff 7f  0  0
-$ ./run_aslr_off.sh ./stack_overflow.bin
+$ bash run_aslr_off.sh ./stack_overflow.bin
 setarch x86_64 -R ./a.out
 [Sent data]
 48 65 6c 6c 6f 2e 2e  0 e0 e3 ff ff ff 7f  0  0
-$ ./run_aslr_off.sh ./stack_overflow.bin
+$ bash run_aslr_off.sh ./stack_overflow.bin
 setarch x86_64 -R ./a.out
 [Sent data]
 48 65 6c 6c 6f 2e 2e  0 e0 e3 ff ff ff 7f  0  0
