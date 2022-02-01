@@ -17,7 +17,7 @@ Spring Semester 2022 - Exercise 2
 
 * DUE: Feb 4 (Friday), 2022 11:59 PM
 
-**GitHub Classroom Link:** TBD
+**GitHub Classroom Link:** https://classroom.github.com/a/LxtQneZu
 
 ## Before You Begin
 
