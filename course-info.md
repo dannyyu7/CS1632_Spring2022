@@ -42,12 +42,7 @@ according to the schedule on the [Syllabus](syllabus.md).  There will be eight
 in-class exercises to apply what you learned during the lectures and to prepare
 you for the deliverables.
 
-You can choose to either attend classes in-person, synchronously online, or
-asynchronously online according to the Flex@Pitt model.  Synchronous attendance
-of classes (either in-person or online) is encouraged but not required.  If you
-don't attend the lecture, please view the in-class discussion through Panopto
-recordings available on Canvas.  The class schedule is available on the
-[Syllabus](syllabus.md)).  
+The class schedule is available on the [Syllabus](syllabus.md)).  
 
 ## Grading
 
