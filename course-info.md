@@ -247,7 +247,7 @@ hours._
 
 ## Back to In-Person
 
-The unversity policy is to be back to full in-person.  That means we are back
+The university policy is to be back to full in-person.  That means we are back
 to pre-COVID rules concerning remote classes: it does not exist, as a general
 rule.  There are two exceptions:
 
