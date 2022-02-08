@@ -1,6 +1,7 @@
 - [CS 1632 - Software Quality Assurance](#cs-1632---software-quality-assurance)
   * [Description](#description)
   * [Prerequisites](#prerequisites)
+  * [The Maven Build System](#the-maven-build-system)
   * [Running Cucumber Tests](#running-cucumber-tests)
     + [Running Cucumber Tests on Eclipse](#running-cucumber-tests-on-eclipse)
     + [Running Cucumber Tests on Commandline](#running-cucumber-tests-on-commandline)
@@ -42,6 +43,34 @@ Please install the Cucumber plug-in for Eclipse following these steps (recommend
 Otherwise, you can use the command line Maven tool to install Cucumber.
 But for that, you will need to install Maven first using the
 following link (not necessary unless you want to run Cucumber on the command line and not on Eclipse): https://maven.apache.org/download.cgi
+
+## The Maven Build System
+
+For Exercise 2, I pre-packaged JUnit libraries into a folder named
+CommandLineJUnit and simply added them to our classpath.  In this exercise
+we are going to use Maven to manage our library dependencies since there are
+just too many libraries tht Cucumber depends upon.
+
+Maven is a build system that simplifies the job of managing library
+dependencies and ensure a uniform development and testing environment among
+project members.  Package dependencies are specified in the project file
+named pom.xml, which describes the Project Object Model in XML format.  In
+the pom.xml file, you can see dependencies to specific versions of
+"cucumber-java", "cucumber-junit", and "junit".  If you want to know more
+about the POM project file, please refer to:
+
+https://maven.apache.org/guides/introduction/introduction-to-the-pom.html
+
+When the Maven project is built, Maven will automatically download the
+specified dependencies (and transitively the dependencies of those
+dependencies) from the Maven Central repository into a local cache.  That
+way, you don't have to scavenge the internet to look for packages.
+
+Maven projects have a standard layout where project implementation sources
+are stored under src/main and project test sources are stored under
+src/test.  More details can be found at:
+
+https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html
 
 ## Running Cucumber Tests
 
@@ -287,3 +316,12 @@ https://cucumber.io/docs/cucumber/api/
 
 * Introduction to Behavior Driven Development (BDD):
 https://cucumber.io/docs/bdd/
+
+* Maven CLI tool download:
+https://maven.apache.org/download.cgi
+
+* Introduction to the Maven POM project file:
+https://maven.apache.org/guides/introduction/introduction-to-the-pom.html
+
+* Introduction to the Maven standard directory layout:
+https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html
