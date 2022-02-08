@@ -19,7 +19,7 @@ Spring Semester 2022 - Supplementary Exercise 2
 
 * DUE: Feb 11 (Friday), 2022 11:59 PM 
 
-**GitHub Classroom Link:** https://classroom.github.com/g/LXJmMx1O
+**GitHub Classroom Link:** https://classroom.github.com/a/R9SGL1RS
 
 ## Description
 
