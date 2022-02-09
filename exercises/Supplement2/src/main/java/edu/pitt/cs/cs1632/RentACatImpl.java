@@ -1,6 +1,7 @@
 package edu.pitt.cs.cs1632;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.lang.StringBuilder;
 
 public class RentACatImpl implements RentACat {
 
@@ -18,7 +19,13 @@ public class RentACatImpl implements RentACat {
 
 	public boolean returnCat(int id) {
 		// TODO
-		return false;
+		Cat cat = getCat(id);
+		if (cat == null) return false;
+		
+		if (cat.getRented() == true) {
+			cat.returnCat();
+			return true;
+		} else return false;
 	}
 
 	/**
@@ -33,7 +40,16 @@ public class RentACatImpl implements RentACat {
 
 	public boolean rentCat(int id) {
 		// TODO
-		return false;
+		Cat cat = getCat(id);
+		if (cat == null) return false;
+			
+		
+		if (cat.getRented() == false) {
+			cat.getRented();
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
@@ -48,7 +64,19 @@ public class RentACatImpl implements RentACat {
 
 	public String listCats() {
 		// TODO
-		return "WRITE CODE FOR THIS";
+		String res;
+		StringBuilder availCats = new StringBuilder();
+		
+		for(Cat c : cats) {
+			if(!c.getRented()) {
+				availCats.append(c.toString());	
+				availCats.append("\n");	
+			}
+		}
+		res = availCats.toString();
+		
+		
+		return res;
 	}
 
 	/**
@@ -62,6 +90,14 @@ public class RentACatImpl implements RentACat {
 
 	public boolean catExists(int id) {
 		// TODO
+		if (cats == null || cats.size() == 0) {
+			return false;
+		} else {
+			for (int i = 0; i < cats.size(); i++) {
+				Cat cat = cats.get(i);
+				if (cat.getId() == id) return true;
+			}
+		}
 		return false;
 	}
 
