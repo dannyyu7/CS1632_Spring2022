@@ -1,3 +1,21 @@
+- [Introduction](#introduction)
+- [JUnit Problems](#junit-problems)
+  * [ValueTest.java](#valuetestjava)
+  * [SquareTest.java](#squaretestjava)
+    + [Integration Test](#integration-test)
+    + [Unit Test](#unit-test)
+  * [DeathStarTest.java](#deathstartestjava)
+    + [Integration Test](#integration-test-1)
+    + [Unit Test](#unit-test-1)
+  * [RandomValueTest.java](#randomvaluetestjava)
+- [Cucumber Problems](#cucumber-problems)
+  * [Testing Value.java](#testing-valuejava)
+    + [value_incVal.feature](#value-incvalfeature)
+    + [ValueStepDefinitions.java](#valuestepdefinitionsjava)
+  * [Testing DeathStar.java](#testing-deathstarjava)
+    + [deathStar_shoot.feature](#deathstar-shootfeature)
+    + [DeathStarStepDefinitions.java](#deathstarstepdefinitionsjava)
+
 # Introduction
 
 You can open the precreated .project file on Eclipse by using the "Open
@@ -69,23 +87,27 @@ The below scenarios can be executed through Run As > Maven Test on Eclipse
 to run the entire test suite, including the JUnit tests.  You can also
 run "mvn test" on the commandline as we did for Supplementary Exercise 2.
 
-## value_incVal.feature
+## Testing Value.java
+
+### value_incVal.feature
 
 Fill in the 3 scenarios using Gherkin Given, When, and Then steps.
 
-## ValueStepDefinitions.java
+### ValueStepDefinitions.java
 
 Fill in the class with step definitions for the above steps.  Use the same
 Value class we used for JUnit testing.  If you do this properly, you should
 be able to implement everything with just 3 steps.
 
-## deathStar_shoot.feature
+## Testing DeathStar.java
+
+### deathStar_shoot.feature
 
 Add a deathStar_shoot.feature file to the project and complete the Gherkin
 file with a scenario that is identical to the DeathStarTest.testShootPlanet
 JUnit test case.
 
-## DeathStarStepDefinitions.java
+### DeathStarStepDefinitions.java
 
 Implement the step definitions corresponding to the Gherkin steps that you
 used above.
