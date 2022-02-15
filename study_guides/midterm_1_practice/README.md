@@ -103,11 +103,12 @@ be able to implement everything with just 3 steps.
 
 ### deathStar_shoot.feature
 
-Add a deathStar_shoot.feature file to the project and complete the Gherkin
-file with a scenario that is identical to the DeathStarTest.testShootPlanet
-JUnit test case.
+Add a deathStar_shoot.feature file to the project under src/test/resources/
+and complete the Gherkin file with a scenario that is identical to the
+DeathStarTest.testShootPlanet JUnit test case.
 
 ### DeathStarStepDefinitions.java
 
-Implement the step definitions corresponding to the Gherkin steps that you
-used above.
+Add a DeathStarStepDefinitions.java file to the project under src/test/java/
+and implement the step definitions corresponding to the Gherkin steps that
+you used above.
