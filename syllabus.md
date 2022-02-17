@@ -66,7 +66,7 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
 
 * Class 1: Midterm 1 review / TopHat questions
 
-* Class 2: Study for Midterm 1 (NO CLASS)
+* Class 2: NO CLASS (Study for Midterm 1.  Extended office hours 1:00 - 5:00 PM on Zoom and in-person at SENSQ 5423)
   
 * Midterm 1 on GradeScope: Feb. 18 (Friday) 9:00 AM - Feb. 20 (Sunday) 11:59 PM
   * Check out the **[study guide](/study_guides/midterm_1_study_guide.md)**!
