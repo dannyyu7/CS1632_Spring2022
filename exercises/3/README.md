@@ -256,7 +256,7 @@ You can now run the RedditCatsTest JUnit class using the provided
 
 * If you are running Mac or Linux:
    ```
-   run.sh
+   bash run.sh
    ```
 
 * You can also run your Selenium tests on Eclipse using the "Run JUnit"
