@@ -1,7 +1,6 @@
 import java.io.*;
 import java.lang.reflect.*;
 
-import org.junit.runner.RunWith;
 import org.junit.*;
 import org.junit.runners.MethodSorters;
 import static org.junit.Assert.*;
