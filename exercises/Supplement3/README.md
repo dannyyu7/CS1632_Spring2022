@@ -330,7 +330,7 @@ Fix equals() based on the feedback given by QuickCheck.
 
 ## Task 5: Complete ValidHTMLStringGenerator doShrink method
 
-Now it's time to look at the testIsValidHTML method:
+Now it's time to look at the testIsValidHTMLTrue method:
 
 A uniform distribution will not give us valid HTML strings.  So we need a different
 generator just like before, namely the HTMLStringGenerator.
