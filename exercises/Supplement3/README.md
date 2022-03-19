@@ -337,7 +337,7 @@ generator just like before, namely the HTMLStringGenerator.
 
 ```
 @Property(trials = 1000)
-public void testIsValidHTML(@From(ValidHTMLStringGenerator.class) String s) {
+public void testIsValidHTMLTrue(@From(ValidHTMLStringGenerator.class) String s) {
 	// System.out.println("testIsValidHTMLTrue s='" + s + "'");
 	assertTrue(StringOps.isValidHTML(s));
 }
