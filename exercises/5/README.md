@@ -20,7 +20,7 @@ Spring Semester 2022 - Exercise 5
 
 * DUE: Mar 25 (Friday), 2022 11:59 PM
 
-**GitHub Classroom Link:** TBD
+**GitHub Classroom Link:** https://classroom.github.com/a/H7bIVvg6
 
 ## Description
 
