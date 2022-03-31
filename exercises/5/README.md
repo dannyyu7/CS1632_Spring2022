@@ -10,6 +10,7 @@
     + [Applying JPF on Rand](#applying-jpf-on-rand)
     + [Applying JPF on DrunkCarnivalShooter](#applying-jpf-on-drunkcarnivalshooter)
     + [Applying JPF on JUnit to Unit Test DrunkCarnivalShooter](#applying-jpf-on-junit-to-unit-test-drunkcarnivalshooter)
+    + [Applying JPF on a JUnit test to obtain the trace](#applying-jpf-on-a-junit-test-to-obtain-the-trace)
     + [Lessons on Model Checking](#lessons-on-model-checking)
   * [Submission](#submission-1)
   * [GradeScope Feedback](#gradescope-feedback)
