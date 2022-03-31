@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
@@ -8,9 +10,11 @@ public class TestRunner {
 	 * Main method.
 	 *
 	 * @param args IGNORED, kept for compatibility
+	 * @throws InvocationTargetException 
+	 * @throws IllegalAccessException 
 	 */
 	@SuppressWarnings("rawtypes")
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IllegalAccessException, InvocationTargetException {
 
 		if (args.length != 2) {
 			System.out.println("Usage: TestRunner <logic type> <test type>\n");
@@ -37,17 +41,26 @@ public class TestRunner {
 		} else if (args[1].equals("jpf")) {
 			Config.setTestType(TestType.JPF_ON_JUNIT);
 			System.out.println("WITH JPF ON JUNIT\n");
+
+			BeanCounterLogicTest test = new BeanCounterLogicTest();
+			for (Method m : test.getClass().getDeclaredMethods()) {
+				test.setUp();
+				m.invoke(test);
+				test.tearDown();
+			}
+			return;
+
 		} else {
 			System.out.println("\nUsage: TestRunner <logic type> <test type>\n");
 			return;
 		}
 
+		assert (args[1].equals("junit"));
+
 		ArrayList<Class> classesToTest = new ArrayList<Class>();
-		if (args[1].equals("junit")) {
-			classesToTest.add(GradeScopeTest.class);
-		}
 
 		// ADD ANY CLASSES YOU WISH TO TEST HERE
+		classesToTest.add(GradeScopeTest.class);
 		classesToTest.add(BeanCounterLogicTest.class);
 
 		// For all test classes added, loop through and use JUnit
@@ -63,7 +76,7 @@ public class TestRunner {
 				System.out.println(f.toString());
 				// System.out.println(f.getTrace());
 			}
-
+			System.out.println("");
 		}
 	}
 }
