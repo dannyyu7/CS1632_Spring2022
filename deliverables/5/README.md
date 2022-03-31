@@ -559,7 +559,7 @@ runs using JPF.
     $ bash runJPF.sh BeanCounter.macos.jpf
     ```
 
-    Sicne this is before doing any implementation, you will see the same failures we saw for plain JUnit testing, except this time for many different machine configurations:
+    Since this is before doing any implementation, you will see the same failures we saw for plain JUnit testing, except this time for many different machine configurations:
 
     ```
     JavaPathfinder core system v8.0 (rev 471fa3b7c6a9df330160844e6c2e4ebb4bf06b6c) - (C) 2005-2014 United States Government. All rights reserved.
@@ -704,26 +704,15 @@ match that configuration.  And try running JUnit again:
 
    Now that same failure will likely manifest.  
 
-2. But it is still possible that the failure does not occur when you test only
-   with JUnit.  This can happen because of random number generation, and the
-random behavior of beans.  JPF exhaustive tests all random numbers but with
-only JUnit, it only tests one sequence of random numbers starting from the seed
-of 42 that the random number generator was seeded with (for reproducibility).
-If the failure does not occur, you can try different seeds to generate
-different sequences of random numbers, until you find the seed that triggers
-the failure.  
-
-3. There is a possibility that you are not able to find the correct seed.
-   Maybe the particular seed that generates the sequence of random numbers
-triggering the defect does not even exist!  Then, reproducing the defect using
-plain JUnit testing is fundamentally an impossible task.  So then you will have
-to somehow use JPF to track down the defect.  For this, you may want to add
-more information to the failString, beyond the slotCount, beanCount, and isLuck
-input values.  The BeanCounterLogicImpl.toString() method is able to generate a
-string representation of the state of the machine at the current step (this is
-what gets printed in the text UI debug output).  You may want to add to the
-failString this string representation for the current step, or all previous
-steps.
+1. There is a possibility that the above will not trigger the bug due to
+   nondeterminism coming from the random number generator.  So then you will
+have to somehow use JPF to track down the defect.  For this, you may want to
+add more information to the failString, beyond the slotCount, beanCount, and
+isLuck input values.  The BeanCounterLogicImpl.toString() method is able to
+generate a string representation of the state of the machine at the current
+step (this is what gets printed in the text UI debug output).  You may want
+to add to the failString this string representation for the current step, or
+all previous steps.
 
    FIX: If the BeanCounterLogicImpl.toString() has a line that looks like:
 

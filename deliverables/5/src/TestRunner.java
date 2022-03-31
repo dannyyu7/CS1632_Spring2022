@@ -42,14 +42,27 @@ public class TestRunner {
 			Config.setTestType(TestType.JPF_ON_JUNIT);
 			System.out.println("WITH JPF ON JUNIT\n");
 
-			BeanCounterLogicTest test = new BeanCounterLogicTest();
-			for (Method m : test.getClass().getDeclaredMethods()) {
-				test.setUp();
-				m.invoke(test);
-				test.tearDown();
+			// Invoke JUnit on BeanCounterLogicTest to get all errors
+			Result r = JUnitCore.runClasses(BeanCounterLogicTest.class);
+			for (Failure f : r.getFailures()) {
+				System.out.println(f.toString());
+				// System.out.println(f.getTrace());
 			}
 			return;
+		} else if (args[1].equals("jpftrace")) {
+			Config.setTestType(TestType.JPF_ON_JUNIT);
+			System.out.println("WITH JPF ON JUNIT WITH TRACING\n");
 
+			// Invoke tests in BeanCounterLogicTest directly to get a trace
+			BeanCounterLogicTest test = new BeanCounterLogicTest();
+			test.setUp(); // @BeforeClass
+			for (Method m : test.getClass().getDeclaredMethods()) {
+				if (m.getName().indexOf("test") == 0) {
+					m.invoke(test);
+				}
+			}
+			test.tearDown(); // @AfterClass
+			return;
 		} else {
 			System.out.println("\nUsage: TestRunner <logic type> <test type>\n");
 			return;
