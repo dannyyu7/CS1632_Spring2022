@@ -695,8 +695,53 @@ led to the failure, which helps you debug the problem.  Feel free to append
 additional information to the failString that may help you debug.
 
 If you implemented the test properly, you should see a long list of errors for
-different combinations.  Debug DrunkCarnivalShooterImpl to remove the errors.
-Now if you play the game, you should not see any defects.
+different combinations.  
+
+
+### Applying JPF on a JUnit test to obtain the trace
+
+You need the below files for this section, which you will have to **copy over**
+to your GitHub Classroom repository because they are not there yet:
+
+* [JUnitTestShoot.macos.jpf](JUnitTestShoot.macos.jpf)
+* [JUnitTestShoot.win.jpf](JUnitTestShoot.win.jpf)
+* [src/TestShoot.java](src/TestShoot.java)
+
+Now you will notice that the list of errors are being emitted by the JUnit
+TestRunner class and JPF itself does not detect any errors.  That is because
+the JUnit framework catches all exceptions emanating from test cases and
+handles them by adding a Failure to the list of Failures to return to the
+TestRunner.  This is so that the JUnit framework does not throw an exception
+and crash on the first test failure it encounters --- and continues
+execution to find other failures.  If JPF does not detect any exceptions,
+then it cannot signal any errors.
+
+Now this behavior is sometimes unhelpful becauase then JPF will not print
+the trace of instructions up to that failure, which is crucial in
+understanding how you got there.  So what can you do?  Well, now that you
+know which test case is failing, you can try directly calling that test case
+in the TestRunner without going through JUnit.  The class TestShoot does
+exactly that: it creates the JUnit test object, calls setUp(), and then
+calls the test method, just like JUnit would, but without catching the
+exceptions.  That way you will be able to get a trace leading up to the
+failure.
+
+In order to invoke TestShoot, do the following on Windows machines:
+
+```
+bash runJPF.bat JUnitTestShoot.win.jpf
+```
+
+Or the following on Mac/Linux machines:
+
+
+```
+bash runJPF.sh JUnitTestShoot.macos.jpf
+```
+
+
+Debug DrunkCarnivalShooterImpl to remove the errors.  Now if you play the
+game, you should not see any defects.
 
 ### Lessons on Model Checking
 
