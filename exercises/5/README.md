@@ -696,8 +696,40 @@ led to the failure, which helps you debug the problem.  Feel free to append
 additional information to the failString that may help you debug.
 
 If you implemented the test properly, you should see a long list of errors for
-different combinations.  
+different combinations:
 
+```
+wahn:CS1632_DrunkCarnivalShooter_Solution wahn$ bash runJPF.sh JUnit.macos.jpf 
+JavaPathfinder core system v8.0 (rev 471fa3b7c6a9df330160844e6c2e4ebb4bf06b6c) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+TestRunner.main()
+
+====================================================== search started: 3/31/22 3:35 PM
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||               (targetChoice=0): expected:<0> but was:<-1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||          ||   (targetChoice=0): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||    ||         (targetChoice=0): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||    ||    ||   (targetChoice=0): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||                     (targetChoice=0): expected:<0> but was:<-1>
+...
+
+====================================================== results
+no errors detected
+
+====================================================== statistics
+elapsed time:       00:00:01
+states:             new=156,visited=161,backtracked=317,end=192
+search:             maxDepth=7,constraints=0
+choice generators:  thread=1 (signal=0,lock=1,sharedRef=0,threadApi=0,reschedule=0), data=125
+heap:               new=20683,released=37388,maxLive=1649,gcCycles=317
+instructions:       473440
+max memory:         155MB
+loaded code:        classes=284,methods=4039
+
+====================================================== search finished: 3/31/22 3:35 PM
+
+```
 
 ### Applying JPF on a JUnit test to obtain the trace
 
