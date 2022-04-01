@@ -8,7 +8,7 @@
   * [What to do](#what-to-do)
     + [Plain JUnit Testing](#plain-junit-testing)
     + [Model Checking Using JUnit](#model-checking-using-junit)
-    + [Applying Model Checking to Your / Solution / Buggy Implementations](#applying-model-checking-to-your---solution---buggy-implementations)
+    + [Applying Model Checking to Your / Solution / Buggy Implementations](#applying-model-checking-to-your--solution--buggy-implementations)
     + [Debugging on Model Checking Failures](#debugging-on-model-checking-failures)
     + [Add an Extra Invariant Test](#add-an-extra-invariant-test)
     + [Coding](#coding)
