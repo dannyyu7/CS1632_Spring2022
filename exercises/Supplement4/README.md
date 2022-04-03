@@ -44,17 +44,19 @@ docker.
 
 1. Get a free account from https://test.pypi.org/.
 
-1. Get a free account from https://GitLab.com by starting the free trial.
-   If you are a new user, you may have to provide credit card information in
-order to use CI/CD pipelines:
+1. Get a free account from https://GitLab.com by starting the free trial.  If
+   you are a new user, you may have to provide credit card information in order
+to use CI/CD pipelines:
 https://about.gitlab.com/pricing/#why-do-i-need-to-enter-credit-debit-card-details-for-free-pipeline-minutes.
-It is still free up to 400 CI/CD minutes, which is more than enough for this
-exercise, but the credit card info is still needed to prevent cryptocurrency
-miners from abusing cloud resources according to GitLab.  In order to find
-out if you need the credit card info, go to `CI/CD > Pipelines` after having
-forked the Part 1 repository and try clicking on `Run pipeline`.  It will
-ask you for the info at that point.  If you are an old user, like I am, you
-wouldn't need to provide it and the pipeline will just run.
+It is still free up to 400 CI/CD minutes per month, which is more than enough
+for this exercise.  You will be prevented from running CI/CD pipelines if you
+go over the quota, so you don't need to be worried about surreptitious
+charging.  GitLab used to not require credit card info but they started asking
+for it to prevent cryptocurrency miners from abusing cloud resources.  In order
+to find out if you need the credit card info, go to `CI/CD > Pipelines` after
+having forked the Part 1 repository and try clicking on `Run pipeline`.  It
+will ask you for the info at that point.  If you are an old user, like I am,
+you wouldn't need to provide it and the pipeline will just run.
 
 1. Install Python 3.9 from https://www.python.org/downloads/ (any version 3.9.*
    should work) After installing Python, running `python -V` should give you the
