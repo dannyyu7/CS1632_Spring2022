@@ -126,3 +126,8 @@ is a [PDF version](ReportTemplate.pdf) as well.  Please read the
 instructions on the template carefully.  For those of you who are unable to
 run pipelines on GitLab because you cannot / do not want to provide credit
 card information, some parts of the report are optional.
+
+Wnen you are done, submit to the "Supplementary Exercise 4 Report" link on
+GradeScope.  You can divvy up the screenshot taking with your partner, but I
+want each of you to try going through the exercise in your own GitLab
+accounts.
